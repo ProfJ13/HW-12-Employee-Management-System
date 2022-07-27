@@ -4,13 +4,24 @@ CREATE DATABASE employeeManager;
 USE employeeManager;
 
 CREATE TABLE department(
-
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30) UNIQUE NOT NULL
+  PRIMARY KEY (id)
 )
 
 CREATE TABLE role(
-
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(50) NOT NULL,
+  salary FLOAT NOT NULL,
+  department_id INT NOT NULL,
+  PRIMARY KEY (id),
 )
 
 CREATE TABLE employee(
-    
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  role_id INT NOT NULL,
+  manager_id INT
+  PRIMARY KEY (id)
 )
